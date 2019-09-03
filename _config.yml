@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -109,15 +109,15 @@ analytics:
 author:
   name             : "Sadegh"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I love ```Python```, ```Java```, ```Machine Learning``` and most importantly **```Coffee```**"
+  bio              : "I love **```Python```**, ```Java```, ```Machine Learning``` and most importantly **```Coffee```**"
   location         : "Calgary, AB"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:sadegh.babapour@gmail.com
-    - label: "LinkedIn"
-      icon: "fas fa-fw fa-linkedin"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/sadeghbabapour/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -125,9 +125,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/sadegh-babapour"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:
