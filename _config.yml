@@ -106,7 +106,7 @@ analytics:
 # Site Author
 author:
   name             : "Sadegh Babapour"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/myavatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am a junior *```Software Engineer```*, and a *```Machine Learning```* enthusiast. I love **```Python```**, **```Java```**, and **```Tableau```** and when I am not coding, I drink **```Coffee!```** and think about the *```bugs```* in my code!"
   location         : "Calgary, Alberta"
   email            :
@@ -266,11 +266,11 @@ defaults:
       comments: # true
       share: true
       related: true
-      
+
   # _pages
   - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+    path: ""
+    type: pages
+  values:
+    layout: single
+    author_profile: true
