@@ -1,6 +1,6 @@
-###This is the link to my [Home Page](https://sadegh-babapour.github.io/)
+### This is the link to my [Home Page](https://sadegh-babapour.github.io/)
 
-# My First Github pages website
+#### My First Github pages website
 
 This Website is meant to show-case the personal projects related to *```Software Engineering```* and specially **```Machine Learning```** stuff.
 By **SADEGH BABAPOUR**.
