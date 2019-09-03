@@ -2,7 +2,7 @@
 title: "About Me"
 permalink: /about/
 header:
-  image: "/images/coffee2.jpg"
+  image: "/assets/images/coffee2.jpg"
 ---
 
 I'm a ```junior``` data scientist who excels at data wrangling, machine learning, exploratory analysis, and data visualizations.
