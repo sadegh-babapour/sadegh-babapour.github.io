@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -287,8 +287,7 @@ defaults:
       share: true
       related: true
 
-  # Pages, it is worth mentioning that most of the contents of this file is done
-  # by following a youtube Tutorial. 
+  # _pages
   - scope:
     path: ""
     type: pages
