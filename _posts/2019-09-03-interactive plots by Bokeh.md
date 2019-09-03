@@ -6,7 +6,7 @@ I will Edit and modify and / or delete once I get the hang of github pages and _
 <iframe src="/assets/plotz/flowers.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
-    height="500"
+    height="600"
     scrolling="no"
     seamless="seamless"
     frameborder="0">
