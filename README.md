@@ -7,8 +7,10 @@ By **SADEGH BABAPOUR**.
 
 --------------------------------------------------
 ```python
-name = "Universe"
-print("Hello {0}", name)
+from random import randint
+galaxy = ["Earth", "Mars", "Jupyter"]
+cursor = randint(0,2)
+print("Hello ", str(galaxy[cursor]) + "!!!")
 ```
 
 --------------------------------------------------
