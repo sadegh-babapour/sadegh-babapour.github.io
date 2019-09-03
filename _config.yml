@@ -20,7 +20,7 @@ title                    : "My personal projects repository"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Sadegh Babapour"
-description              : "I am a junior Software Engineer, Machine Learning enthusiast, and in my break times I drink Coffee!"
+description              : "New to the Game!"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -107,10 +107,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sadegh"
+  name             : "Sadegh Babapour"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I love **```Python```**, ```Java```, ```Machine Learning``` and most importantly **```Coffee```**"
-  location         : "Calgary, AB"
+  bio              : "I am a junior ```Software Engineer```, and a *```Machine Learning``` enthusiast. I love **```Python```**, **```Java```**, and ```Tableau``` and when I am not coding, I drink **```Coffee!```** and think about the *```bugZ```* in my code!"
+  location         : "Calgary, Alberta"
   email            :
   links:
     - label: "Email"
@@ -286,3 +286,12 @@ defaults:
       comments: # true
       share: true
       related: true
+
+  # Pages, it is worth mentioning that most of the contents of this file is done
+  # by following a youtube Tutorial. 
+  - scope:
+    path: ""
+    type: pages
+  values:
+    layout: single
+    author_profile: true
