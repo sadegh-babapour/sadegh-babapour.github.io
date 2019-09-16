@@ -1,5 +1,6 @@
 # Bayesian Probability, or how certain..uhum..uncertain are those results?
 
+<div style="text-align: justify">
 
 When dealing with probabilites and chances of events happening, for almost all cases we wear the frequentist hat; which is if we roll the dice 12 times,assuming it is a fair dice, the chances are we would get 2 "number 5"s (1/6) and for the most cases this is sufficient enough. 
 
@@ -25,3 +26,5 @@ now, let's roll up our sleeves and calculate the chances and see how good (read 
 
 
 **```To be continued, testing the format now....```**.
+</div>
+
