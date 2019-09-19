@@ -1,5 +1,3 @@
-classes: wide
-
 # Using Java Stream API to tackle the infamous word count challenge
 
 <div style="text-align: justify">
