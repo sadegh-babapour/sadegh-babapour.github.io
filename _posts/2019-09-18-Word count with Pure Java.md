@@ -17,8 +17,8 @@ Nothing special here, except, that an array is not a good idea, since searching 
 </p>
 
 ```html
-<link rel="stylesheet" href="C:/Users/TheMightyLobster/Documents\Personal_Website/sadegh-babapour.github.io/_posts/code highlight/monokai-sublime.css">
-<script src="C:/Users/TheMightyLobster/Documents/Personal_Website/sadegh-babapour.github.io/_posts/code highlight/highlight.pack.js"></script>
+<link rel="stylesheet" href="/C:/Users/TheMightyLobster/Documents\Personal_Website/sadegh-babapour.github.io/_posts/code highlight/monokai-sublime.css">
+<script src="/C:/Users/TheMightyLobster/Documents/Personal_Website/sadegh-babapour.github.io/_posts/code highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
