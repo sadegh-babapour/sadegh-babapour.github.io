@@ -1,3 +1,8 @@
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai-sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 # Using Java Stream API to tackle the infamous word count challenge
 
 <div style="text-align: justify">
@@ -16,20 +21,10 @@ Also, having a comprehensive list of stopWords (words that are useless in a sens
 Nothing special here, except, that an array is not a good idea, since searching through an array has complexity of O(n). This might not seem significant, however, since we will check against this list over and over for every line, will add extra unnnecessary overhead.
 </p>
 
-```html
-<link rel="stylesheet" href="/C:/Users/TheMightyLobster/Documents\Personal_Website/sadegh-babapour.github.io/_posts/code highlight/monokai-sublime.css">
-<script src="/C:/Users/TheMightyLobster/Documents/Personal_Website/sadegh-babapour.github.io/_posts/code highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-```
-
-```html
-
 <pre><code class="java">
-Set<String> romanNumeralsSet = new HashSet<>(Arrays
-.asList(romanNumerals));
-        
-Set<String> badwords = new HashSet<>(Arrays.asList(stopWords));
+
+Set<String> romanNumeralsSet = new HashSet<>(Arrays.asList(romanNumerals));
+        Set<String> badwords = new HashSet<>(Arrays.asList(stopWords));
 
 
 </code></pre>
-```
