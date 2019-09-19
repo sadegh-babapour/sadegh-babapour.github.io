@@ -16,8 +16,19 @@ Also, having a comprehensive list of stopWords (words that are useless in a sens
 Nothing special here, except, that an array is not a good idea, since searching through an array has complexity of O(n). This might not seem significant, however, since we will check against this list over and over for every line, will add extra unnnecessary overhead.
 </p>
 
-```java
-Set<String> romanNumeralsSet = new HashSet<>(Arrays.asList(romanNumerals));
-        Set<String> badwords = new HashSet<>(Arrays.asList(stopWords));
+```html
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+```
 
+```html
+<pre><code class="java">
+Set<String> romanNumeralsSet = new HashSet<>(Arrays
+.asList(romanNumerals));
+        
+Set<String> badwords = new HashSet<>(Arrays.asList(stopWords));
+
+
+</code></pre>
 ```
