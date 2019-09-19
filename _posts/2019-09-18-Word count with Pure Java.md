@@ -17,12 +17,13 @@ Nothing special here, except, that an array is not a good idea, since searching 
 </p>
 
 ```html
-<link rel="stylesheet" href="/path/to/styles/default.css">
-<script src="/path/to/highlight.pack.js"></script>
+<link rel="stylesheet" href="C:/Users/TheMightyLobster/Documents\Personal_Website/sadegh-babapour.github.io/_posts/code highlight/monokai-sublime.css">
+<script src="C:/Users/TheMightyLobster/Documents/Personal_Website/sadegh-babapour.github.io/_posts/code highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
 ```html
+
 <pre><code class="java">
 Set<String> romanNumeralsSet = new HashSet<>(Arrays
 .asList(romanNumerals));
