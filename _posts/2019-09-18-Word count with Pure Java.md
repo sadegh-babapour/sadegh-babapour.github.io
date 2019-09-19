@@ -19,7 +19,7 @@ Nothing special here, except, that an array is not a good idea, since searching 
 
 <dive>
 
-<div style="white-space: pre-wrap;">
+<div style="white-space: pre-wrap;word-wrap: break-word;">
 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;"><span class="hljs-selector-tag" style="color: rgb(178, 148, 187);">try</span>
         {
             <span class="hljs-selector-tag" style="color: rgb(178, 148, 187);">StreamSupport</span><span class="hljs-selector-class" style="color: rgb(204, 102, 102);">.stream</span>(Files.lines(Paths.get(filePath)).spliterator(), true)
