@@ -55,12 +55,13 @@ Most of the novels use roman numerals to divide the chapters in books, so we nee
 <img id="poster" style="margin: 100; max-width: 100%; text-align:right; " title="Anna Karenina - Russian Movie Poster" src="https://cdn.cinematerial.com/p/500x/gt5rligj/anna-karenina-russian-movie-poster.jpg?v=1456583537" width="200" height="300">
 </div>
 
+<div style="text-align: justify">
 <p>
 I will be using the book titled " Anna Karenina" by Tolstoy from Project Gutenberg. It is about 2MB and has ~15000 lines. This is not really a big file, so I bloated up to have around <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">10 Million</mark> lines and it is around 500 MB txt file. Still not really a big data , but it is good enough to do some big data techniques with personal computer.
 </p>
+</div>
 
 ### let's dive into the code!!!
-
 
 Below is a sample list of roman numerals.For complete list (up to 100), refer to the end of the post.
 
@@ -86,21 +87,17 @@ With Java 8, lambdas are introduced in java and we could use <mark style="backgr
 
 ```Predicate```
 
-
 <div style="text-align: justify">
 <p>
 Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with  colons <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px"><strong>::</strong></mark> which makes code more readable and less error prone.
 </p>
-<p>If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">Car::isFast</mark> no more (), with our stream stuff. However, what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">
-filter( car -> !car.isFast() )
-</mark>.
-
+<p>
+If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">Car::isFast</mark> no more (), with our stream stuff. However, what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">filter( car -> !car.isFast())</mark>.
 </p>
 
 <p>
 Another option would be to go back to class definition and write another method called isSlow(). What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such privileges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
 </p>
-
 </div>
 
 Below is a snippet of Predicate for the "isEmpty()" method is String class. String class has a method to check if the string is empty or not. We could either use snippet below:
@@ -111,6 +108,7 @@ Predicate<String> notEmpty = isEmpty.negate();
 
 stream().filter(notEmpty)
 ```
+
 or, something like this for the one-liner fans:
 
 ```java
@@ -128,6 +126,7 @@ Files.readAllLines(Paths.get(filePath))
 ```
 
 ### streamSupport & spliterator
+
 <div style="text-align: justify">
 There are multiple ways to kick start the stream of data or generate streams, but personally I prefer streamSupport as it gives the parallelization switch in its stream method arguments. other options are stream(), parallelStream() or stream().parallel()
 </div>
@@ -135,6 +134,7 @@ There are multiple ways to kick start the stream of data or generate streams, bu
 ```java
 StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true);
 ```
+
 Now, 
 
 
