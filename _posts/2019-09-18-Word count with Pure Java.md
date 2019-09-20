@@ -260,7 +260,7 @@ if you are have way through the book like me, we can expect to read more about l
 <td>levin</td><td>405972</td></tr>  <tr>
 <td>vronsky</td><td>215460</td></tr>  <tr>
 <td>anna</td><td>206136</td></tr>
-<td>kitty</td><td>169092</td></tr>  <tr>
+<td>kitty</td><td>169092</td></tr>  
 <td>alexey</td><td>158760</td></tr>
   </tbody> 
    </table>
@@ -331,31 +331,4 @@ public class Application3
 
 
 #### link to full source code:
-https://github.com/sadegh-babapour/LargeFileProcessing/blob/master/src/com/babapour/Application3.java
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div>
-<img  src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="300" height="200" style="display: block;  margin-left: auto;  margin-right: auto; ">
-</div> -->
+<a href ="https://github.com/sadegh-babapour/LargeFileProcessing/blob/master/src/com/babapour/Application3.java">Vist my Github</a> 
