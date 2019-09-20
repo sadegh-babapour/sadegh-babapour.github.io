@@ -1,4 +1,5 @@
 <style>
+
         .center {
           margin: auto;
           width: 100%;
@@ -13,7 +14,15 @@
 
         </style>
 
-# Using Java Stream API to count word frequnecies: "Order is the magick word!"
+<style>
+        .markk {
+           background-color: #34495E;
+           color: #FDFEFE;
+        }       
+
+</style>
+
+# Using Java Stream API to count word frequencies: "Order is the magical word!"
 
 <div style="text-align: justify">
 <p>
@@ -53,11 +62,14 @@ String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 
 `Predicate`
 <div style="text-align: justify">
-Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with <mark style="background-color: lightgrey"><strong>::</strong></mark> which makes code more readable and less error prone.
+Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px"><strong>::</strong></mark> which makes code more readable and less error prone.
 </div>
 
 <div style="text-align: justify">
-<p>If you have a class called Car with a method isFast, we could use ```Car::isFast``` with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background-color: lightgrey"><strong>filter(car -> !car.isFast())</strong></mark>.
+<p>If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">Car::isFast</mark> with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">
+filter( car -> !car.isFast() )
+</mark>.
+
 </p>
 <p> 
 Another option would be to go back to class definition and write another method called isSlow. What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such privileges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
@@ -73,7 +85,7 @@ Predicate<String> notEmpty = isEmpty.negate();
 
 ### Starting a Stream and applying filters and maps
 <div style="text-align: justify">
-We need to get a hold of the file path and feed it to the Files class. I will not dive into this, but we have two options: ``Files.lines(...)`` or ``Files.readAllLines(..)``, I had better performance with `readAllLines()`, but feel free to use the other option.
+We need to get a hold of the file path and feed it to the Files class. I will not dive into this, but we have two options: <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">Files.lines(...)</mark> or <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">Files.readAllLines(..)</mark>; I had better performance with `readAllLines()`, but feel free to use the other option.
 </div>
 
 ```java
@@ -89,20 +101,10 @@ There are multiple ways to kick start the stream of data, but personally I prefe
 StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true);
 ```
 
-<script src="https://gist.github.com/sadegh-babapour/9868572630416be8f7efaf79a892f8d2.js"></script>
+<div>
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40">
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-###### Complete list of stop words:
+#### Complete list of stop words:
 
