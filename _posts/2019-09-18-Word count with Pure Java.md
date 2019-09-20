@@ -243,7 +243,7 @@ for the small size files, there was still a huge increase in speed, but with the
 let's say we have 10 athletes and one coach and these athletes will be completing tasks such as doing some jumping and crawling while moving from point A to pint B. In the sequential sense, the coach takes each athlete from A to B, comes back and does the same thing until everyone is at point B.
 </p>
 <p>
-for small number of athletes this is fine: A simple for loop iterating through an array. But what if we have 10 million athletes now, with parallelization, we can think of this as all available coaches provided by the cpu let's say 10, and we partition and assign athletes to these coaches (500 atheletes per coach). each coach takes a team rather than individuals and guides them through the instructions. It become now clear, hopefully, that why parallelization makes processing large files faster.
+for small number of athletes this is fine: A simple for loop iterating through an array. But what if we have 10 million athletes now, with parallelization, we can think of this as all available coaches provided by the cpu let's say 10, and we partition and assign athletes to these coaches (500 athletes per coach). each coach takes a team rather than individuals and guides them through the instructions. It become now clear, hopefully, that why parallelization makes processing large files faster.
 </p>
 </div>
 
@@ -252,7 +252,79 @@ for small number of athletes this is fine: A simple for loop iterating through a
 </div>
 
 
+and finally table below is the top 5 frequent words:
+if you are have way through the book like me, we can expect to read more about levin, who is the underdog in the story so far!
+<table>  <thead><tr><th>Word</th><th>Frequency</th></tr></thead>  <tbody>  <tr><td>levin</td><td>405972</td></tr>  <tr><td>vronsky</td><td>215460</td></tr>  <tr><td>anna</td><td>206136</td></tr>
+<td>kitty</td><td>169092</td></tr>  <tr><td>alexey</td><td>158760</td></tr>  </tbody>  </table>
+
+The real numbers are 1611, 855, ... which means the files was copied over 252 times.
+
+### Full code here abbreviated the long lists:
+
+```java
+public class Application3
+{
+
+
+    public static void main(String[] args)
+    {
+        long zer0 = System.nanoTime();
+        String filePath = "C:/Users/TheMightyLobster/IdeaProjects/myKalk2/src/com/babapour" +
+                "/AnnaKrennina.txt";
+
+        String[] romanNumerals = {"i", "ii", "iii", "iv", "v", "vi", "vii"};
+
+
+        String[] stopWords = {"a", "about", "above", "after", "again", "against",
+                "am", "an", "and", "any", "are", "aren", "aren't", "as", "at", "be", "because"};
+
+        Set<String> romanNumeralsSet = new HashSet<>(Arrays.asList(romanNumerals));
+        Set<String> badWords = new HashSet<>(Arrays.asList(stopWords));
+
+        Predicate<String> isEmpty = String::isEmpty;
+        Predicate<String> notEmpty = isEmpty.negate();
+
+        System.out.println("map after sorting by values in descending order: \n");
+
+        try
+        {
+            StreamSupport.stream(
+                    Files.readAllLines(
+                            Paths.get(filePath))
+                            .spliterator(), true)
+                    .map(aLine -> aLine.toLowerCase()
+                            .replaceAll("\\p{Punct}", " ")
+                            .split("\\s"))
+                    .flatMap(Arrays::stream)
+                    .filter(x -> !x.startsWith("chapter"))
+                    .filter(Predicate.not(romanNumeralsSet::contains))
+                    .filter(Predicate.not(badWords::contains))
+                    .filter(Predicate.not(isEmpty))
+                    .map(word -> new AbstractMap.SimpleEntry<>(word, 1))
+                    .collect(toMap(AbstractMap.SimpleEntry::getKey,
+                            AbstractMap.SimpleEntry::getValue, Integer::sum))
+                    .entrySet()
+                    .stream()
+                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                    .collect(toMap(Map.Entry::getKey, Map.Entry::getValue,
+                            (e1, e2) -> e2, LinkedHashMap::new))
+                    .forEach((k, v) -> System.out.println((k + "," + v)));
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        long end = System.nanoTime();
+        System.out.println((end - zer0));
+    }
+}
+```
+
+
+
+
 #### link to full source code:
+https://github.com/sadegh-babapour/LargeFileProcessing/blob/master/src/com/babapour/Application3.java
+
 
 
 
