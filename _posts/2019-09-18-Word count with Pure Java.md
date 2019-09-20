@@ -136,11 +136,105 @@ There are multiple ways to kick start the stream of data or generate streams, bu
 StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true);
 ```
 
-Now, 
+For any computation over a sequence of data, we need an iterator. Spliterator is the object for traversal and partitioning of source elements in stream related operations. A Spliterator may traverse elements individually or **`sequentially in bulk`**.
 
 
+## Let's build that (Data) pipeline :steam_locomotive:
 
+We are streaming lines of strings, we need to lowercase the words, and replace useless keywords with whitespace
 
+1- The first step is making everything lowercase:
+The **`Punct`** is regex stuff for removing punctuation, with a quick StackOverFlow, you can get more info on that:
+
+```java
+.map(aLine -> aLine.toLowerCase()
+    .replaceAll("\\p{Punct}", " ")
+    .split("\\s"))
+```
+
+2- in this step, we will use the flatMap, for processing array of strings created by the split funktion: The reason for using flatMap instead of map is that we need to work with the individual string (words) now and using map will carry on with the array of strings.
+
+```java
+.flatMap(Arrays::stream)
+```
+
+3- In this part, we need to do some filtering: remove chapters, roman numerals and the stop words:
+
+```java
+.filter(x -> !x.startsWith("chapter"))
+```
+
+Unlike Python :snake:,There is no **`in`** keyword in Java :coffee:, but we need to filter our entries if they exist **`in`** a certain list:
+
+```python
+children_list = ["Chrystal", "Umar", "Charity", "Kyle", "Justin"]
+naughty_list = ["Chrystal", "Umar"]
+
+for child in children_list:
+    if child in naughty_list:
+        print(child,"--> No gifts for you!")
+    else:
+        print(child, ": you'll get an X-Box")
+```
+
+Instead, we will use a lambda function and filter them with the NoneMatch method, which returns true if none of the stream elements match the given predicate: (equals) in this case:
+
+```java
+.filter(entry -> Arrays.stream(romanNumerals).noneMatch(entry::equals))
+.filter(entry -> Arrays.stream(stopWords).noneMatch(entry::equals))
+.filter(notEmpty)
+```
+
+4- Now, it is time to put these outputs into a dictionary or a Map:
+We will assign count 1, to all the words coming out of the previous process and map them into (Key:Value) format like "Anna":1.
+
+```java
+.map(word -> new AbstractMap.SimpleEntry<>(word, 1))
+```
+5- It's collecting time:
+for all the entries in the map from previous step, we need to get a hold of its key, and sum the values if the kays are equal and map them to a new dictionary (Key: finalCount):
+
+```java
+.collect(toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue, Integer::sum))
+```
+
+6- We will stream this dictionary's entries, and sort them based on the entry's value. We can take advantage of the stream sorted method. The comparingByValue of the Dictionary(Map) item's value, as name suggests compares the values rather than keys, and the reverseOrder, returns the opposite of the comPareByValue comparator and everything gets sorted at the end. Next, we do another collect here, to another Dictionary, a different type of dictionary.
+
+Dictionaries or Maps are not ordered collections, LinkedHashMaps in Java, however, are list like dictionaries in which there is order. we get the entries from previous and create new entries based on the value from the (key,value) pair.
+
+```java
+.sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+    .collect(
+        toMap(Map.Entry::getKey,
+            Map.Entry::getValue,
+            e1, e2) -> e2, LinkedHashMap::new))
+```
+
+7- (Almost) Final step: print the elements of the new ordered dictionary
+
+```java
+.forEach((k, v) -> System.out.println((k + "," + v)));
+```
+
+# Order is the magic word!
+Days after, finishing the project, there was some kind of an "Aha" moment. before brushing it off as something not so significant, I changed only 2 lines of code, increased the file size and voila, it was indeed something worth doing.
+
+A- As mentioned before, we had two *`list`*s, But we just need them to filter data, we don't care about if the container is an ordered one (hence a list) or not.
+So, I changed the lists into sets:
+
+```java
+Set<String> romanNumeralsSet = new HashSet<>(Arrays.asList(romanNumerals));
+Set<String> badwords = new HashSet<>(Arrays.asList(stopWords));
+```  
+
+And therefore, the following changes followed through:
+
+```java
+.filter(Predicate.not(romanNumeralsSet::contains))
+.filter(Predicate.not(badwords::contains))
+```
+
+for the small size files, there was still a huge increase in speed, but with the final file having almost 10 million lines, the first one took so long that it had to be put down :ambulance:.
 
 ### Sequential vs Parallel : an Analogy
 
@@ -158,7 +252,8 @@ for small number of athletes this is fine: A simple for loop iterating through a
 </div>
 
 
-#### Complete list of stop words:
+#### link to full source code:
+
 
 
 
