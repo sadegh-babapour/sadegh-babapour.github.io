@@ -102,7 +102,9 @@ StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true
 ```
 
 <div>
-<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40">
+<center>
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="400" height="400 align="center">
+</center>
 </div>
 
 
