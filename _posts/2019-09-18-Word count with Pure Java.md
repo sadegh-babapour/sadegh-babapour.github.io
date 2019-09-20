@@ -77,7 +77,7 @@ Now, We don't want to count all the "The"-s, "a"-s and any other useless words. 
 String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 ```
 
-##### Few notes before streaming....
+### Few notes before streaming....
 
 <div style="text-align: justify">
 With Java 8, lambdas are introduced in java and we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px"> .forEach(element -> element *2)</mark> method in our list to multiply list elements by 2, instead of writing a for loop; Which is concise, elegant and some might say it is beautiful as well
@@ -85,7 +85,8 @@ With Java 8, lambdas are introduced in java and we could use <mark style="backgr
 
 :man_facepalming:
 
-```Predicate```
+
+#### Predicate
 
 <div style="text-align: justify">
 <p>
