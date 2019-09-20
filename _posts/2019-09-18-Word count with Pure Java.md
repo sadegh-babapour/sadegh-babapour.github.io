@@ -26,27 +26,36 @@
 
 <div style="text-align: justify">
 <p>
-The first time I encountered the word count problem was in the Big Data course. Count word frequencies and report them by descending order, using Hadoop and later on with PySpark. A quick Google search will bring you all the results which are mostly copy pasta-ed from some source, I mean as the saying goes the (code) resemblance was uncanny!
+The first time I encountered the word count problem was in a Big Data course I took. Counting word frequencies and reporting them by descending order, using Hadoop and later on with PySpark. A quick Google search will bring you all the results which are mostly copy pasta-ed from some source and the only difference is the variable names.
 </p>
 <p>
-I love python and programming with python will definitely help you dodge banging your head on the wall or long stares on the screen like you are looking at some ancient scripture (C++)!; However, the run time even for a small text file, and even using the University's cluster computer system, still was long. Now that I am more confident with Java, I decided to do the same task using Java on my own personal laptop.
+I love python and programming with python will definitely help you dodge banging your head on the wall or long stares on the screen like you are looking at some ancient scripture (C++)! but there is always the performance issue; The run time even for a small text file using hadoop, and spark, and even using the University's cluster computer system, still was not convincing and did not deliver the fast performance promises. Now that I am more confident with Java, I decided to do the same task using Java on my own personal laptop and details for comparison will be added at the end.
 </p>
 <p>
-For this, we will need Java 8 or greater, your favorite IDE (IntelliJ for sure), and some familiarity with map reduce would be sufficient.
-Also, having a comprehensive list of stopWords (words that are useless in a sense like "the") and since we are dealing with novels and literature texts, a list of roman numerals would be a good starting point.
+For this, we will need Java 8 or greater (Preferably Java 11), your favorite IDE or just run it on terminal, and some familiarity with map-reduce or production & consumption would be sufficient.
+Also, having a comprehensive list of stopWords (words that are useless like "the") and since we are dealing with novels and literature texts, a list of roman numerals would be a good starting point.
 </p>
 
 </div>
 
-### let's dive into the code!!!
-
 <div style="text-align: justify">
 <p>
-First we need to have a list of roman numerals that we will filter or replace.
-Nothing special here, except, that an array is not a good idea, since searching through an array has complexity of O(n). This might not seem significant, however, since we will check against this list over and over for every line, will add unnecessary overhead. This will be revisited.
+Most of the novels use roman numerals to divide the chapters in books, so we need to have a list of roman numerals that we will filter or replace. There is nothing special here, except, that an array is not a good idea, we will compare our text against these lists for every line and since searching through an array has complexity of O(n) it will introduce unnecessary overhead.
+</p>
+
+<img id="poster" align= "middle" style="margin: 0; max-width: 100%;" alt="Anna Karenina - Russian Movie Poster" title="Anna Karenina - Russian Movie Poster" src="https://cdn.cinematerial.com/p/500x/gt5rligj/anna-karenina-russian-movie-poster.jpg?v=1456583537" width="200" height="300">
+
+
+
+<p>
+I will be using the book titled " Anna Karenina" by Tolstoy from Project Gutenberg. It is about 2MB and has ~15000 lines. This is not really a big file, so I bloated up to have around <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:15px">10 Million</lines> and it is around 500 MB txt file.
 
 For complete list (up to 100), refer to the end of the post.
 </p>
+
+### let's dive into the code!!!
+
+
 </div>
 
 ```java
@@ -102,7 +111,7 @@ StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true
 ```
 
 <div>
-<img align="middle" src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="400" height="400">
+<img  src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="300" height="200" style="display: block;  margin-left: auto;  margin-right: auto; ">
 </div>
 
 
