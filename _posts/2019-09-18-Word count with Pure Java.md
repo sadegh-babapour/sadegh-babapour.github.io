@@ -38,12 +38,14 @@ Nothing special here, except, that an array is not a good idea, since searching 
 
 For complete list (up to 100), refer to the end of the post.
 </p>
+</div>
 
 ```java
 String[] romanNumerals = {"i", "ii", "iii", "iv", "v", "vi", "vii", "viii"};
 ```
-
+<div style="text-align: justify">
 Now, We don't want to count all the "The"s, "a"s and any other useless words. I have gathered a long list of English stop words from multiple sources such as Github, nltk, etc. here is a small portion of the list:
+</div>
 
 ```java
 String[] stopWords = {"a", "about", "above", "after", "again", "against"};
@@ -52,10 +54,14 @@ String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 `Predicate`
 <div style="text-align: justify">
 Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with <mark style="background-color: lightgrey"><strong>::</strong></mark> which makes code more readable and less error prone.
-<div>
+</div>
 
 <div style="text-align: justify">
-If you have a class called Car with a method isFast, we could use ```Car::isFast``` with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas ```filter(car -> !car.isFast())```. Another option would be to go back to class definition and write another method called isSlow. What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such previliges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
+<p>If you have a class called Car with a method isFast, we could use ```Car::isFast``` with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background-color: lightgrey"><strong>filter(car -> !car.isFast())</strong></mark>.
+</p>
+<p> 
+Another option would be to go back to class definition and write another method called isSlow. What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such privileges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
+</p>
 </div>
 
 Below is a snippet of Predicate for empty method is String class.
@@ -64,9 +70,11 @@ Below is a snippet of Predicate for empty method is String class.
 Predicate<String> isEmpty = String::isEmpty;
 Predicate<String> notEmpty = isEmpty.negate();
 ```
-### Starting a Stream and applying filters and maps
 
+### Starting a Stream and applying filters and maps
+<div style="text-align: justify">
 We need to get a hold of the file path and feed it to the Files class. I will not dive into this, but we have two options: ``Files.lines(...)`` or ``Files.readAllLines(..)``, I had better performance with `readAllLines()`, but feel free to use the other option.
+</div>
 
 ```java
 Files.readAllLines(Paths.get(filePath))
@@ -75,11 +83,25 @@ Files.readAllLines(Paths.get(filePath))
 ### streamSupport & spliterator
 <div style="text-align: justify">
 There are multiple ways to kick start the stream of data, but personally I prefer streamSupport as it gives the parallelization switch in its stream method arguments.
-
-
+</div>
 
 ```java
 StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true);
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###### Complete list of stop words:
 
