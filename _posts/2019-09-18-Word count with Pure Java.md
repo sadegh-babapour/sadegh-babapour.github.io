@@ -89,6 +89,7 @@ There are multiple ways to kick start the stream of data, but personally I prefe
 StreamSupport.stream(Files.readAllLines(Paths.get(filePath)).spliterator(), true);
 ```
 
+<script src="https://gist.github.com/sadegh-babapour/9868572630416be8f7efaf79a892f8d2.js"></script>
 
 
 
