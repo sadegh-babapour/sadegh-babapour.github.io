@@ -62,12 +62,15 @@ Predicate&lt;<span class="hljs-built_in" style="color: rgb(222, 147, 95);">Strin
 
 ### Starting a Stream and applying filters and maps
 
+
+
 We need to get a hold of the file path and feed it to the Files class. I will not dive into this, but we have two options: ``Files.lines(...)`` or ``Files.readAllLines(..)``, I had better performance with `readAllLines()`, but feel free to use the other option.
 
-<div style="background: #272822; block;font-size: 16PX; overflow-x: auto"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #f8f8f2">Predicate</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">isEmpty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">String:</span><span style="color: #f92672">:</span><span style="color: #f8f8f2">isEmpty</span><span style="color: #f92672">;</span>
+<div style="background: #272822; overflow:auto;width:auto;font-size: 16PX;padding:.2em .6em;">
+
+<pre style="margin: 0; line-height: 125%"><span style="color: #f8f8f2">Predicate</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">isEmpty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">String:</span><span style="color: #f92672">:</span><span style="color: #f8f8f2">isEmpty</span><span style="color: #f92672">;</span>
 <span style="color: #f8f8f2">Predicate</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">notEmpty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">isEmpty</span><span style="color: #f92672">.</span><span style="color: #a6e22e">negate</span><span style="color: #f92672">();</span>
-</pre></td></tr></table></div>
+</pre></div>
 
 
 
