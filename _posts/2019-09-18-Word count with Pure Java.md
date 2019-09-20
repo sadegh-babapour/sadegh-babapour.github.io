@@ -1,4 +1,4 @@
-## Using Java Stream API to count word frequnecies: "Order is the magick word!"
+# Using Java Stream API to count word frequnecies: "Order is the magick word!"
 
 <style>
         .center {
@@ -29,12 +29,62 @@ Also, having a comprehensive list of stopWords (words that are useless in a sens
 </p>
 </div>
 
-## Enough rambling, let's dive into the code!!!
 
+### let's dive into the code!!!
+
+<div style="text-align: justify">
 <p>
 First we need to have a list of roman numerals that we will filter or replace.
 Nothing special here, except, that an array is not a good idea, since searching through an array has complexity of O(n). This might not seem significant, however, since we will check against this list over and over for every line, will add unnecessary overhead. This will be revisited.
 </p>
+</div>
+<pre class="hljs" style="display: block; font-size: 16PX;overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;"><span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>[] romanNumerals = {<span class="hljs-string" style="color: rgb(181, 189, 104);">"i"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"ii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"iii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"iv"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"v"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"vi"</span>, ...}</pre>
+
+
+Now, We don't want to count all the "The"s, "a"s and any other useless words. I have gathered a long list of English stop words from multiple sources such as Github, nltk, etc. here is the list:
+
+<pre class="hljs" style="display: block; font-size: 16PX;overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;">String[] stopWords = {<span class="hljs-string" style="color: rgb(181, 189, 104);">"a"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"about"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"above"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"after"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"again"</span>}</pre>
+
+
+`Predicate`
+<div style="text-align: justify">
+Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with ``::`` which makes code more readable and less error prone.
+
+If you have a class called Car with a method isFast, we could use ```Car::isFast``` with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas ```filter(car -> !car.isFast())```. Another option would be to go back to class definition and write another method called isSlow. What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such previliges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
+
+Below is a snippet of Predicate for empty method is String class.
+</div>
+<div>
+<pre class="hljs" style="display: block;font-size: 16PX; overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;">Predicate&lt;<span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>&gt; <span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span> = <span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>::<span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span>;
+Predicate&lt;<span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>&gt; notEmpty = <span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span>.negate();</pre>
+</div>
+
+
+### Starting a Stream and applying filters and maps
+
+We need to get a hold of the file path and feed it to the Files class. I will not dive into this, but we have two options: ``Files.lines(...)`` or ``Files.readAllLines(..)``, I had better performance with `readAllLines()`, but feel free to use the other option.
+
+<div style="background: #272822; block;font-size: 16PX; overflow-x: auto"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #f8f8f2">Predicate</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">isEmpty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">String:</span><span style="color: #f92672">:</span><span style="color: #f8f8f2">isEmpty</span><span style="color: #f92672">;</span>
+<span style="color: #f8f8f2">Predicate</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">notEmpty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">isEmpty</span><span style="color: #f92672">.</span><span style="color: #a6e22e">negate</span><span style="color: #f92672">();</span>
+</pre></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###### Complete list of roman numerlas up to 100:
 <div class= "center">
 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;"><span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>[] romanNumerals = {<span class="hljs-string" style="color: rgb(181, 189, 104);">"i"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"ii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"iii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"iv"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"v"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"vi"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"vii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"viii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"ix"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"x"</span>,
                 <span class="hljs-string" style="color: rgb(181, 189, 104);">"xi"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xiii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xiv"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xv"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xvi"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xvii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xviii"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xix"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xx"</span>, <span class="hljs-string" style="color: rgb(181, 189, 104);">"xxi"</span>,
@@ -43,7 +93,9 @@ Nothing special here, except, that an array is not a good idea, since searching 
 
 </div>
 
-Now, We don't want to count all the "The"s, "a"s and any other useless words. I have gathered a long list of English stop words from multiple sources such as Github, nltk, etc. here is the list:
+
+###### Complete list of stop words:
+
 
 <div class= "center">
 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;"><span class="hljs-type" style="color: rgb(222, 147, 95);">String</span>[] stopWords = {<span class="hljs-comment" style="color: rgb(150, 152, 150);">"a"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"about"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"above"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"after"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"again"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"against"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"ain"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"all"</span>,
@@ -303,17 +355,3 @@ Now, We don't want to count all the "The"s, "a"s and any other useless words. I 
                 , <span class="hljs-comment" style="color: rgb(150, 152, 150);">"zi"</span>, <span class="hljs-comment" style="color: rgb(150, 152, 150);">"zz"</span>};</pre>
 </div>
 
-`Predicate`
-
-Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with ``::`` which makes code more readable and less error prone. If you have a class called Car with a method isFast, we could use ```Car::isFast``` with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas ```filter(car -> !car.isFast())```. Another option would be to go back to class definition and write another method called isSlow. What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such previliges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
-
-Below is a snippet of Predicate for empty method is String class.
-
-<div>
-<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(29, 31, 33) none repeat scroll 0% 0%; color: rgb(197, 200, 198); padding: 0.5em;">Predicate&lt;<span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>&gt; <span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span> = <span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>::<span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span>;
-Predicate&lt;<span class="hljs-built_in" style="color: rgb(222, 147, 95);">String</span>&gt; notEmpty = <span class="hljs-built_in" style="color: rgb(222, 147, 95);">isEmpty</span>.negate();</pre>
-</div>
-
-#### Starting a Stream and applying filters and maps
-
-We need to get a hold of the file path and feed it to the Files class.
