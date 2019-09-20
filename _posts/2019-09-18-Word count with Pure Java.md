@@ -80,7 +80,7 @@ String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 <div style="text-align: justify">
 With Java 8, lambdas are introduced in java and we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px"> .forEach(element -> element *2)</mark> method in our list to multiply list elements by 2, instead of writing a for loop, it is concise, elegant and pretty much dummy proofs coding</div>
 
-:man_facepalming:
+:facepalming:
 
 `Predicate`
 <div style="text-align: justify">
