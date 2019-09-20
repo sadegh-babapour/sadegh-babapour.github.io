@@ -22,6 +22,12 @@
 
 </style>
 
+<style>
+      .img-container {
+        text-align: center;
+      }
+    </style>
+
 # Using Java Stream API to count word frequencies: "Order is the magical word!"
 
 <div style="text-align: justify">
@@ -42,40 +48,47 @@ Also, having a comprehensive list of stopWords (words that are useless like "the
 <p>
 Most of the novels use roman numerals to divide the chapters in books, so we need to have a list of roman numerals that we will filter or replace. There is nothing special here, except, that an array is not a good idea, we will compare our text against these lists for every line and since searching through an array has complexity of O(n) it will introduce unnecessary overhead.
 </p>
+</div>
 
-<img id="poster" align= "middle" style="margin: 0; max-width: 100%;" alt="Anna Karenina - Russian Movie Poster" title="Anna Karenina - Russian Movie Poster" src="https://cdn.cinematerial.com/p/500x/gt5rligj/anna-karenina-russian-movie-poster.jpg?v=1456583537" width="200" height="300">
+<div class="img-container">
 
-
+<img id="poster" style="margin: 100; max-width: 100%; text-align:right; " title="Anna Karenina - Russian Movie Poster" src="https://cdn.cinematerial.com/p/500x/gt5rligj/anna-karenina-russian-movie-poster.jpg?v=1456583537" width="200" height="300">
+</div>
 
 <p>
-I will be using the book titled " Anna Karenina" by Tolstoy from Project Gutenberg. It is about 2MB and has ~15000 lines. This is not really a big file, so I bloated up to have around <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:15px">10 Million</lines> and it is around 500 MB txt file.
-
-For complete list (up to 100), refer to the end of the post.
+I will be using the book titled " Anna Karenina" by Tolstoy from Project Gutenberg. It is about 2MB and has ~15000 lines. This is not really a big file, so I bloated up to have around <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px">10 Million</mark> lines and it is around 500 MB txt file. Still not really a big data , but it is good enough to do some big data techniques with personal computer.
 </p>
 
 ### let's dive into the code!!!
 
 
-</div>
+Below is a sample list of roman numerals.For complete list (up to 100), refer to the end of the post.
 
 ```java
 String[] romanNumerals = {"i", "ii", "iii", "iv", "v", "vi", "vii", "viii"};
 ```
+
 <div style="text-align: justify">
-Now, We don't want to count all the "The"s, "a"s and any other useless words. I have gathered a long list of English stop words from multiple sources such as Github, nltk, etc. here is a small portion of the list:
+Now, We don't want to count all the "The"-s, "a"-s and any other useless words. I have gathered a long list of English stop words from multiple sources such as Github, NLTK, etc. here is a small portion of the list:
 </div>
 
 ```java
 String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 ```
+##### Few notes before streaming....
+
+<div style="text-align: justify">
+With Java 8, lambdas are introduced in java and we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px"> .forEach(element -> element *2)</mark> method in our list to multiply list elements by 2, instead of writing a for loop, it is concise, elegant and pretty much dummy proofs coding</div>
+
+:man_facepalming:
 
 `Predicate`
 <div style="text-align: justify">
-Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px"><strong>::</strong></mark> which makes code more readable and less error prone.
+Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px"><strong>::</strong></mark> which makes code more readable and less error prone.
 </div>
 
 <div style="text-align: justify">
-<p>If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">Car::isFast</mark> with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:13px">
+<p>If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px">Car::isFast</mark> with our stream stuff. but what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:14px">
 filter( car -> !car.isFast() )
 </mark>.
 
