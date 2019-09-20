@@ -75,14 +75,18 @@ Now, We don't want to count all the "The"-s, "a"-s and any other useless words. 
 ```java
 String[] stopWords = {"a", "about", "above", "after", "again", "against"};
 ```
+
 ##### Few notes before streaming....
 
 <div style="text-align: justify">
-With Java 8, lambdas are introduced in java and we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px"> .forEach(element -> element *2)</mark> method in our list to multiply list elements by 2, instead of writing a for loop; Which is concise, elegant and some might say it is beautiful as well</div>
+With Java 8, lambdas are introduced in java and we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px"> .forEach(element -> element *2)</mark> method in our list to multiply list elements by 2, instead of writing a for loop; Which is concise, elegant and some might say it is beautiful as well
+</div>
 
 :man_facepalming:
 
 ```Predicate```
+
+
 <div style="text-align: justify">
 <p>
 Before jumping to Predicate, here is a brief note about method reference. When using map, reduce and filter in streaming, we could use anonymous functions aka lambda-s, however, if you already have a well defined class with proper methods we could could method referencing with  colons <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px"><strong>::</strong></mark> which makes code more readable and less error prone.
@@ -90,8 +94,13 @@ Before jumping to Predicate, here is a brief note about method reference. When u
 <p>If you have a class called Car with a method isFast, we could use <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">Car::isFast</mark> no more (), with our stream stuff. However, what if we are looking for slow cars? This would force us to give up on the method referencing and move back to lambdas <mark style="background:#34495E; color: #FDFEFE; font-weight:bold; font-size:16px">
 filter( car -> !car.isFast() )
 </mark>.
+
+</p>
+
+<p>
 Another option would be to go back to class definition and write another method called isSlow(). What if we feel lazy, or in a more concrete scenario, maybe we are not the owner of the class and don't have such privileges? then what? Well, Java 11 introduces Predicate.not() or negate(), to reverse our boolean logic or Predicate.
 </p>
+
 </div>
 
 Below is a snippet of Predicate for the "isEmpty()" method is String class. String class has a method to check if the string is empty or not. We could either use snippet below:
