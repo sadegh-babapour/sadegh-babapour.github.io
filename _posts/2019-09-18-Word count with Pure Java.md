@@ -254,8 +254,16 @@ for small number of athletes this is fine: A simple for loop iterating through a
 
 and finally table below is the top 5 frequent words:
 if you are have way through the book like me, we can expect to read more about levin, who is the underdog in the story so far!
-<table>  <thead><tr><th>Word</th><th>Frequency</th></tr></thead>  <tbody>  <tr><td>levin</td><td>405972</td></tr>  <tr><td>vronsky</td><td>215460</td></tr>  <tr><td>anna</td><td>206136</td></tr>
-<td>kitty</td><td>169092</td></tr>  <tr><td>alexey</td><td>158760</td></tr>  </tbody>  </table>
+
+<table>  
+<thead><tr><th>Word</th><th>Frequency</th></tr></thead>  <tbody>  <tr>
+<td>levin</td><td>405972</td></tr>  <tr>
+<td>vronsky</td><td>215460</td></tr>  <tr>
+<td>anna</td><td>206136</td></tr>
+<td>kitty</td><td>169092</td></tr>  <tr>
+<td>alexey</td><td>158760</td></tr>
+  </tbody> 
+   </table>
 
 The real numbers are 1611, 855, ... which means the files was copied over 252 times.
 
