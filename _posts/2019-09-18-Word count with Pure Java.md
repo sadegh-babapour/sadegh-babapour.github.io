@@ -48,6 +48,10 @@ Also, having a comprehensive list of stopWords (words that are useless like "the
 <p>
 Most of the novels use roman numerals to divide the chapters in books, so we need to have a list of roman numerals that we will filter or replace. There is nothing special here, except, that an array is not a good idea, we will compare our text against these lists for every line and since searching through an array has complexity of O(n) it will introduce unnecessary overhead.
 </p>
+<p>
+
+
+</p>
 </div>
 
 <div class="img-container">
