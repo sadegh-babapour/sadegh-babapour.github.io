@@ -35,7 +35,7 @@
 it's been quite a while since I have learned the concept of logistic regression;it is a modeling technique that regressively models phenomena that have limited countable or better put, discrete outcome. it's a supervised learning technique so we gather as much sensor data (read information) 
 as we can to be able to answer questions like is it going to rain or not? will that be eligible to get a loan from the bank or not...you get the idea!
 </p>
-
+</div>
 
 
 <div style="text-align: justify">
