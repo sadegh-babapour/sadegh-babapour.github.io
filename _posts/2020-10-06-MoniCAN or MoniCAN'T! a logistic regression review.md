@@ -36,9 +36,7 @@ it's been quite a while since I have learned the concept of logistic regression;
 as we can to be able to answer questions like is it going to rain or not? will that be eligible to get a loan from the bank or not...you get the idea!
 </p>
 
-</div>
-<div>
-</div>
+
 
 <div style="text-align: justify">
 <p>
