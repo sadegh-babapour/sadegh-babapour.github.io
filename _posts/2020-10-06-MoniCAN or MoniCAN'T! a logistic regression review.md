@@ -37,6 +37,8 @@ as we can to be able to answer questions like is it going to rain or not? will t
 </p>
 
 </div>
+<div>
+</div>
 
 <div style="text-align: justify">
 <p>
@@ -45,11 +47,11 @@ here is a random picture of logistic regression visualization before we move on!
 </div>
 
 <div class="img-container">
-<p>
-</p>
+
 <img id="poster" style="margin: 150; max-width: 100%; text-align:center; " title="Logistic Regression source: Deep Learning By Example" src="https://static.packt-cdn.com/products/9781788399906/graphics/f7b79fda-3d03-45ba-94d2-83d989499cca.png" width="600" height="300">
 </div>
-
+<p>
+</p>
 
 <div style="text-align: justify">
 <p>
@@ -65,8 +67,9 @@ that's why it is not a classification problem and it's a regression thing!back t
 
 <div class="img-container">
 
-<img id="poster" style="margin: 150; max-width: 100%; text-align:center; " title="Logistic Regression source: Deep Learning By Example" src="https://www.mcall.com/resizer/K5tCFPrr3xTq5KYWc840Xrh7w8Y=/800x638/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/OESKO5JLSQNBZJLRU5BASJOZUQ.jpg" width="400" height="320">
+<img id="poster" style="margin: 150; max-width: 100%; text-align:center; " title="Clinton Speech" src="https://www.mcall.com/resizer/K5tCFPrr3xTq5KYWc840Xrh7w8Y=/800x638/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/OESKO5JLSQNBZJLRU5BASJOZUQ.jpg" width="400" height="320">
 </div>
+
 <div style="text-align: justify">
 <p>
 </p>
