@@ -54,6 +54,7 @@ So the first question that pops into the mind is that: hol' on! wait a minute! i
 <p>
 that's why it is not a classification problem and it's a regression thing!back to the title! if you have some sort of interest in the media, you sure have heard of the Clinton–Lewinsky scandal! and it was a hot topic back in its time!whether he had s**ual relations with that woman or not (although we all know the truth, I guess) could be solved by a logistic regression approach!in regression problems, we gather historic information and based on certain independent factors values, we predict a certain value which could be changed by tweaking one or many of the independent values!same thing happens with logistic regression, if we after careful study and based on some criteria come up with a ceretain probability value for a result, again by tweaking one of some of the impacting factors, we can come up with the new/different value of how probable that outcome is! at the end of the day, to justify the prediction, we can say that based on such and such we believe it will rain or whether the said allegation happened or not but here is the twist! we are only certain about this prediction with a probability of X: simply put, we believe that the result is MoniCAN but we are only 75% percent sure, and we used a threshold of 70%, so any outcome with a probability of less than 70% is MoniCAN't!
 </p>
+</div>
 
 
 <div class="img-container">
@@ -61,7 +62,9 @@ that's why it is not a classification problem and it's a regression thing!back t
 </p>
 <img id="poster" style="margin: 150; max-width: 100%; text-align:center; " title="Logistic Regression source: Deep Learning By Example" src="https://www.mcall.com/resizer/K5tCFPrr3xTq5KYWc840Xrh7w8Y=/800x638/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/OESKO5JLSQNBZJLRU5BASJOZUQ.jpg" width="400" height="320">
 </div>
+
 <p>
+
 </p>
 <p>
 At the end of the day, it all comes to this: Where do you draw the line! or how sure is a good enough answer! The real beauty of this and probably the actual application of this is that in IRL short for in real life, we are tryingto come up with a better answer for our threshold! by gathering more info we can say that we are either less likely lowering the standards or raising the bar! so when the scandal first came out, the probability of it happening was probabl around 40% and people liked Clinton, so the bar was higher! then his apology video comes up and obviously wasn't as sincere as people expected but then again who has ever seen a sincere apology from any political or public person, specially considering so much is as stake! back to earth, this both increased the predicted probability
