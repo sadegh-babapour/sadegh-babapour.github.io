@@ -28,7 +28,7 @@
       }
     </style>
 
-# MoniCAN or MoniCAN'T! a logistic regression review
+## Why Regression & not Classification
 
 <div style="text-align: justify">
 it's been quite a while since I have learned the concept of logistic regression;it is a modeling technique that regressively models phenomena that have limited countable or better put, discrete outcome. it's a supervised learning technique so we gather as much sensor data (read information) 
@@ -49,7 +49,7 @@ here is a random picture of logistic regression visualization before we move on!
 
 <div style="text-align: justify">
 <p>
-So the first question that pops into the mind is that: hol' on! wait a minute! if there is no relationship or inter/extra-polation between the current outcome and the next, how on earth this still is considered a regression technique!! Although you can go to StackOverflow or similar Q&A forums to get a better scientific answer, the answer is that in a way we actually do regressively predict results probabilty, however, at the last step we use a special function called sigmoid as a gate to do the heavy lifting for us! the regression is for the probability factors, so if we predict the value of some outcome to be 79%,  for certain conditions, we can have an arbitrary probabilityvalue of 79.56789 for another prediction. It is just that after having all these probability numbers, we just pass them through a filter to name some predictions as true and some to be false based on a threshold or a cut-off!
+So the first question that pops into the mind is that: hol' on! wait a minute! if there is no relationship or inter/extra-polation between the current outcome and the next, how on earth this still is considered a regression technique!! Although you can go to StackOverflow or similar Q&A forums to get a better scientific answer, the answer is that in a way we actually do regressively predict results probabilty, however, at the last step we use a special function called sigmoid as a gate to do the heavy lifting for us! the regression is for the probability factors, so if we predict the value of some outcome to be 79%,  for certain conditions, we can have an arbitrary probabilityvalue of 79.56789 for another prediction. It is just that after having all these probability numbers, we just pass them through a filter to name some predictions as true and some to be false based on a threshold or a cut-off! Our prediction is simply a probabilty value rather than what class the outcome belongs too!
 </p>
 <p>
 that's why it is not a classification problem and it's a regression thing!back to the title! if you have some sort of interest in the media, you sure have heard of the Clinton-Lewisky story! and it was a hot topic back in its time!whether he had s**ual relations with that woman or not (although we all know 
