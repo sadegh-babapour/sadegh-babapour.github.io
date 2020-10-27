@@ -1,0 +1,3 @@
+#### Emotions and feelings happen man!...Shit it just happened to me!
+
+Going through dificult times, you learn to appreciate the simple things in life. like for example, even if you are foreign funny looking guy who is reaslly dope and awesome, ended up living in a poor neighborhood in Calgary: The Cowtown, and life is not exactly going as you planned, you still get to cherish the small talk moments which turn into weekend evening long dialogues.
