@@ -30,4 +30,12 @@ I must say I love this place! Why? we'll come back! creating suspense!!
 </p>
 <p>As I drove through 16 street with the usual downtown commuters traffic, although I was feeling nostalgic for whatever reason, it wasn't my homeland or anything to be honest, that feeling was gone and a new energy was rising up in me. with a cup of Large 1 cream 1 sugar Timmies,Canadian, in a German Car, listening to some french music to get my self in the zone, I was reaching towards medicine hat, the last city in AB and soon moving towards Saskachewan the flatlands, boring straight roads with not many people on the road.</p>
 
-<p> Time to commit and see how this looks like so far</p>
+<p> Time to commit and see how this looks like so far... looks good movin' on</p>
+
+<p>
+##SK : That ol' boring corner store series sums up this place better than I expected</p>
+<p></p>
+
+<p>Arrived at the "Hotel" that I had reserved nothing fancy two! queen beds for one ;) lol. got some rest although the 7 hour drive really hadn't tire me a bit, but it was the first day and was testing the water for the next long day. got up, felt hungry, went to a grocery store and got al the stuff for a cold sandwich something quick and pack of water bottles, came back to the hotel ate up, now feeling bored, hmm, what to do, tried the casino, not many people in sight and the front desk staff didn't even put on a show for the covid related stuff, while keeping her head down, asked the usual have you been sick, have you been out of the country, .... like yeah, I came back from an overseas trip and the first thing to do is come to a place to lose all my canadian plastic money. that's it, although I drove around the city to see what it looks like, in all honest nothing to see here folks, except that it is the polic state? or the state where you will see an unnecessary number of cameras, traffic camers to be exact, all over the place, and by the looks of it, a lot of really poor people there too. te gist: Too many cameras and too many police cars, I had heard that they sent new police hires there to be trained but that many cameras? waste of tax payers money in my not-so-humble opinion!, next is the military state, Manitoba!</p>
+
+</div>
