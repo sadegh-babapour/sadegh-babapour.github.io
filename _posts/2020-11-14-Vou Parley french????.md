@@ -1,3 +1,0 @@
-#### A coding job which requires FRENCH??? Yea, you read that right? It's like asking for fluency in Polish for BBQ chef assistant job or any other ridiculous "excuse"!!!!
-
-wrote a lot, deleted them all, will delete the linkedin shaer as well, well because of covid...
